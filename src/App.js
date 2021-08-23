@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    fetch('/users');
+    fetch('/login', {
+      method: 'post',
+      body: JSON.stringify({ username: 'pom' })
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
